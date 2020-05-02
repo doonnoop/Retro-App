@@ -8,10 +8,12 @@ class RetroApp extends React.Component {
     return (
       <div>
         <Header />
-        <div className="container">
-          <RetroList list="wentWell" retros={this.props.wentWell} />
-          <RetroList list="toImprove" retros={this.props.toImprove} />
-          <RetroList list="actionItems" retros={this.props.actionItems} />
+        <div className="retro">
+          <div className="container">
+            <RetroList list="wentWell" retros={this.props.wentWell} />
+            <RetroList list="toImprove" retros={this.props.toImprove} />
+            <RetroList list="actionItems" retros={this.props.actionItems} />
+          </div>
         </div>
       </div>
     );

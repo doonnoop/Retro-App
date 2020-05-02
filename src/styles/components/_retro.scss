@@ -1,12 +1,12 @@
-.header {
-  margin-bottom: $m-size;
-  padding: $m-size 0;
+.retro {
+  background-color: #f1f1f1;
+  padding-top: $l-size;
 }
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 80rem;
+  max-width: 100rem;
   margin: 0 auto;
   padding: 0 $m-size;
 }

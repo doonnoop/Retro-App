@@ -8,7 +8,7 @@ import configureStore from "./store/configureStore";
 import { addRetro, deleteRetro } from "./actions/retro";
 
 const store = configureStore();
-const item1 = store.dispatch(addRetro({ list: "wentWell", content: "well 1" }));
+store.dispatch(addRetro({ list: "wentWell", content: "well 1" }));
 store.dispatch(addRetro({ list: "wentWell", content: "well 2" }));
 store.dispatch(addRetro({ list: "toImprove", content: "improve 1" }));
 store.dispatch(addRetro({ list: "actionItems", content: "action 1" }));

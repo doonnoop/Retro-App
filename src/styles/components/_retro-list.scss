@@ -1,6 +1,21 @@
 .retro-list {
-  border: 1px solid black;
   width: 100%;
   height: 50rem;
   margin: 0 $xs-size;
+}
+.retro-list_con {
+  margin: 0 $xs-size $m-size;
+  display: flex;
+  flex-direction: column;
+}
+.add-button {
+  max-width: 100%;
+  background: $white;
+  border: 1px solid darken($color: $white, $amount: 10%);
+  border-radius: $xs-size;
+  border-bottom: 0.3rem solid darken($color: $white, $amount: 10%);
+  font-size: $xl-size;
+  margin-bottom: $xs-size;
+  padding: 0 $s-size;
+  color: $off-white;
 }

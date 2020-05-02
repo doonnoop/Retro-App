@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteRetro, voteRetro } from "../actions/retro";
+import voteImg from "../../public/images/vote.png";
 
 class RetroListItem extends React.Component {
   handleDelete = () => {
@@ -19,13 +20,17 @@ class RetroListItem extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>{this.props.retro.content}</p>
-        <p>votes: {this.props.retro.votes}</p>
+      <div className="retro-item">
+        <div className="retro-item__title">{this.props.retro.content}</div>
+        <span className="retro-item__catalog">{this.props.retro.votes}</span>
         <div>
-          <button onClick={this.handleDelete}>Delete</button>
-          <button onClick={this.handleVote}>Vote</button>
+          <button onClick={this.handleVote} className="retro-item__vote">
+            <img src={voteImg} />
+          </button>
           <button onClick={this.handleDelete}>MoveToList</button>
+          <button className="retro-item__delete" onClick={this.handleDelete}>
+            x
+          </button>
         </div>
       </div>
     );

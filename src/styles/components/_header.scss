@@ -1,8 +1,10 @@
 .header {
-  // background: $off-black;
-  // color: #ffffff;
   margin-bottom: $m-size;
   padding: $m-size 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .header__title {
   font-size: $l-size;

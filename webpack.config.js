@@ -18,6 +18,18 @@ module.exports = {
         test: /\.s?css$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              // outputPath: 'assets/images',  //指定图片路径
+              useRelativePath: true,
+            },
+          },
+        ],
+      },
     ],
   },
   devtool: "cheap-module-eval-source-map",

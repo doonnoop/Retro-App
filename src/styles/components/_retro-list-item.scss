@@ -1,0 +1,47 @@
+.retro-item {
+  width: auto;
+  background: $white;
+  border: 1px solid darken($color: $white, $amount: 10%);
+  border-radius: $xs-size;
+  border-bottom: 0.3rem solid darken($color: $white, $amount: 10%);
+  margin-bottom: $xxs-size;
+  padding: $m-size;
+  position: relative;
+}
+.retro-item__title {
+  font-size: $xm-size;
+  margin: $s-size 0 $xxm-size $s-size;
+}
+.retro-item__catalog {
+  position: absolute;
+  color: $white;
+  font-size: $m-size;
+  background-color: $off-white;
+  min-height: $xxm-size;
+  min-width: $xxm-size;
+  line-height: $xxm-size;
+  right: $s-size;
+  top: $s-size;
+  text-align: center;
+  -webkit-border-radius: $xxm-size;
+  border-radius: $xxm-size;
+  padding: 2px;
+}
+.retro-item__delete {
+  float: right;
+  border: none;
+  font-size: $xm-size;
+  color: #ccc2c2;
+  outline: none;
+  margin-top: $m-size;
+}
+.retro-item__vote {
+  border: none;
+  outline: none;
+  vertical-align: middle;
+  text-align: center;
+}
+.retro-item__vote img {
+  width: $l-size;
+  height: $l-size;
+}
