@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import RetroListItem from "./RetroListItem";
-import AddRetro from "./AddRetro";
-import { addRetro } from "../actions/retro";
+import React from 'react';
+import { connect } from 'react-redux';
+import RetroListItem from '../containers/RetroListItem';
+import AddRetro from './AddRetro';
+import { addRetro } from '../actions/retro';
 
 class RetroList extends React.Component {
   constructor(props) {
@@ -25,10 +25,10 @@ class RetroList extends React.Component {
 
   render() {
     return (
-      <div className="retro-list">
+      <div className='retro-list'>
         <h3>{this.props.list}</h3>
-        <div className="retro-list_con">
-          <button className="add-button" onClick={this.openAddRetroModal}>
+        <div className='retro-list_con'>
+          <button className='add-button' onClick={this.openAddRetroModal}>
             +
           </button>
           {this.props.retros &&

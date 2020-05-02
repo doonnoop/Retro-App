@@ -1,12 +1,12 @@
-import { v4 as uuidv4 } from "uuid";
-const ADD_RETRO = "ADD_RETRO";
-const DELETE_RETRO = "DELETE_RETRO";
-const VOTE_RETRO = "VOTE_RETRO";
+import { v4 as uuidv4 } from 'uuid';
+const ADD_RETRO = 'ADD_RETRO';
+const DELETE_RETRO = 'DELETE_RETRO';
+const VOTE_RETRO = 'VOTE_RETRO';
 
 export const addRetro = ({
-  list = "",
-  content = "",
-  author = "",
+  list = '',
+  content = '',
+  author = '',
   votes = 0,
 }) => ({
   type: ADD_RETRO,
@@ -21,8 +21,10 @@ export const addRetro = ({
 
 export const deleteRetro = ({ id, list } = {}) => ({
   type: DELETE_RETRO,
-  id,
-  list,
+  payload: {
+    id,
+    list,
+  },
 });
 
 export const voteRetro = ({ id, list } = {}) => ({
