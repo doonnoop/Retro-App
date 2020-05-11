@@ -5,15 +5,14 @@ import "normalize.css/normalize.css";
 import "./styles/style.scss";
 import RetroApp from "./components/RetroApp";
 import configureStore from "./store/configureStore";
-import { addRetro, deleteRetro } from "./actions/retro";
+import { addRetro } from "./actions/retro";
 
 const store = configureStore();
-store.dispatch(addRetro({ list: "wentWell", content: "well 1" }));
-store.dispatch(addRetro({ list: "wentWell", content: "well 2" }));
-store.dispatch(addRetro({ list: "toImprove", content: "improve 1" }));
-store.dispatch(addRetro({ list: "actionItems", content: "action 1" }));
+store.dispatch(addRetro({ list: "Went Well", content: "well 1" }));
+store.dispatch(addRetro({ list: "Went Well", content: "well 2" }));
+store.dispatch(addRetro({ list: "To Improve", content: "improve 1" }));
+store.dispatch(addRetro({ list: "Action Items", content: "action 1" }));
 
-// store.dispatch(deleteRetro({ list: "wentWell", id: item1.retro.id }));
 console.log(store.getState());
 
 ReactDOM.render(

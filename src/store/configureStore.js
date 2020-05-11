@@ -1,10 +1,12 @@
 import { createStore, combineReducers } from "redux";
-import retroReducer from "../reducers/retro";
+import retroListReducer from "../reducers/retro";
 
 export default () => {
   const store = createStore(
     combineReducers({
-      retros: retroReducer,
+      wentWell: retroListReducer("WENT_WELL"),
+      toImprove: retroListReducer("TO_IMPROVE"),
+      actionItems: retroListReducer("ACTION_ITEMS"),
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );

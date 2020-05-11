@@ -1,7 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
-const ADD_RETRO = "ADD_RETRO";
-const DELETE_RETRO = "DELETE_RETRO";
-const VOTE_RETRO = "VOTE_RETRO";
+import {
+  ADD_RETRO,
+  DELETE_RETRO,
+  VOTE_RETRO,
+  EDIT_RETRO,
+  listNameMapping,
+} from "../config/config";
 
 export const addRetro = ({
   list = "",
@@ -9,24 +13,35 @@ export const addRetro = ({
   author = "",
   votes = 0,
 }) => ({
-  type: ADD_RETRO,
-  retro: {
-    id: uuidv4(),
-    content,
-    author,
-    votes,
+  type: `${ADD_RETRO}_${listNameMapping[list]}`,
+  payload: {
+    retro: {
+      id: uuidv4(),
+      content,
+      author,
+      votes,
+    },
   },
-  list,
 });
 
 export const deleteRetro = ({ id, list } = {}) => ({
-  type: DELETE_RETRO,
-  id,
-  list,
+  type: `${DELETE_RETRO}_${listNameMapping[list]}`,
+  payload: {
+    id,
+  },
 });
 
 export const voteRetro = ({ id, list } = {}) => ({
-  type: VOTE_RETRO,
-  id,
-  list,
+  type: `${VOTE_RETRO}_${listNameMapping[list]}`,
+  payload: {
+    id,
+  },
+});
+
+export const editRetro = ({ id, list, content } = {}) => ({
+  type: `${EDIT_RETRO}_${listNameMapping[list]}`,
+  payload: {
+    id,
+    content,
+  },
 });

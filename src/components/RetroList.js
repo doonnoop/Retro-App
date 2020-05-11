@@ -52,10 +52,4 @@ class RetroList extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addRetro: (data) => dispatch(addRetro(data)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(RetroList);
+export default RetroList;

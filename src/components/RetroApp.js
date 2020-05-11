@@ -10,9 +10,9 @@ class RetroApp extends React.Component {
         <Header />
         <div className="retro">
           <div className="container">
-            <RetroList list="wentWell" retros={this.props.wentWell} />
-            <RetroList list="toImprove" retros={this.props.toImprove} />
-            <RetroList list="actionItems" retros={this.props.actionItems} />
+            <RetroList list="Went Well" retros={this.props.wentWell} />
+            <RetroList list="To Improve" retros={this.props.toImprove} />
+            <RetroList list="Action Items" retros={this.props.actionItems} />
           </div>
         </div>
       </div>
@@ -22,9 +22,9 @@ class RetroApp extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    wentWell: state.retros.wentWell,
-    toImprove: state.retros.toImprove,
-    actionItems: state.retros.actionItems,
+    wentWell: state.wentWell,
+    toImprove: state.toImprove,
+    actionItems: state.actionItems,
   };
 };
 
