@@ -5,19 +5,18 @@ import "normalize.css/normalize.css";
 import "./styles/style.scss";
 import RetroApp from "./components/RetroApp";
 import configureStore from "./store/configureStore";
-import { addRetro } from "./actions/retro";
+import { startSetRetros } from "./actions/retro";
+import "./firebase/firebase";
+import Loading from "./components/Loading";
 
 const store = configureStore();
-store.dispatch(addRetro({ list: "Went Well", content: "well 1" }));
-store.dispatch(addRetro({ list: "Went Well", content: "well 2" }));
-store.dispatch(addRetro({ list: "To Improve", content: "improve 1" }));
-store.dispatch(addRetro({ list: "Action Items", content: "action 1" }));
 
-console.log(store.getState());
-
-ReactDOM.render(
-  <Provider store={store}>
-    <RetroApp />
-  </Provider>,
-  document.getElementById("app")
-);
+ReactDOM.render(<Loading />, document.getElementById("app"));
+store.dispatch(startSetRetros()).then(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <RetroApp />
+    </Provider>,
+    document.getElementById("app")
+  );
+});

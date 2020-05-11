@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { connect } from "react-redux";
-import { addRetro } from "../actions/retro";
+import { startAddRetro } from "../actions/retro";
 
 class AddRetro extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class AddRetro extends React.Component {
     if (!content) {
       this.setState({ error: "Enter valid value to add item" });
     } else {
-      this.props.addRetro({ content, list: this.props.list });
+      this.props.startAddRetro({ content, list: this.props.list });
       this.setState({ error: undefined });
       e.target.elements.retro.value = "";
       this.props.handleCloseModal();
@@ -53,7 +53,7 @@ class AddRetro extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addRetro: (data) => dispatch(addRetro(data)),
+    startAddRetro: (data) => dispatch(startAddRetro(data)),
   };
 };
 

@@ -1,8 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import RetroListItem from "./RetroListItem";
 import AddRetro from "./AddRetro";
-import { addRetro } from "../actions/retro";
 
 class RetroList extends React.Component {
   constructor(props) {

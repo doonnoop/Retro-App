@@ -1,6 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteRetro, voteRetro, editRetro } from "../actions/retro";
+import {
+  startDeleteRetro,
+  startVoteRetro,
+  startEditRetro,
+} from "../actions/retro";
 import voteImg from "../../public/images/vote.png";
 
 class RetroListItem extends React.Component {
@@ -12,15 +16,16 @@ class RetroListItem extends React.Component {
     };
   }
   handleDelete = () => {
-    this.props.deleteRetro({
+    this.props.startDeleteRetro({
       id: this.props.retro.id,
       list: this.props.list,
     });
   };
 
   handleVote = () => {
-    this.props.voteRetro({
+    this.props.startVoteRetro({
       id: this.props.retro.id,
+      votes: this.props.retro.votes + 1,
       list: this.props.list,
     });
   };
@@ -39,7 +44,7 @@ class RetroListItem extends React.Component {
 
   handleEdit = (e) => {
     if (e.keyCode === 13) {
-      this.props.voteRetro({
+      this.props.startEditRetro({
         id: this.props.retro.id,
         list: this.props.list,
         content: this.state.retroContent,
@@ -83,9 +88,9 @@ class RetroListItem extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteRetro: (data) => dispatch(deleteRetro(data)),
-    voteRetro: (data) => dispatch(voteRetro(data)),
-    editRetro: (data) => dispatch(editRetro(data)),
+    startDeleteRetro: (data) => dispatch(startDeleteRetro(data)),
+    startVoteRetro: (data) => dispatch(startVoteRetro(data)),
+    startEditRetro: (data) => dispatch(startEditRetro(data)),
   };
 };
 

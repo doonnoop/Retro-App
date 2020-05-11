@@ -3,6 +3,7 @@ import {
   DELETE_RETRO,
   VOTE_RETRO,
   EDIT_RETRO,
+  SET_EXPENSES,
 } from "../config/config";
 
 const retroReducerDefaultState = {
@@ -17,24 +18,28 @@ const retroListReducer = (listName) => (state = [], action) => {
       return [...state, action.payload.retro];
     case `${DELETE_RETRO}_${listName}`:
       return state.filter(({ id }) => id !== action.payload.id);
-    case `${VOTE_RETRO}_${listName}`:
-      return state.map((retro) => {
-        if (retro.id == action.payload.id) {
-          const newRetro = Object.assign({}, retro);
-          newRetro.votes = retro.votes + 1;
-          return newRetro;
-        }
-        return retro;
-      });
+    // case `${VOTE_RETRO}_${listName}`:
+    //   return state.map((retro) => {
+    //     if (retro.id == action.payload.id) {
+    //       return {
+    //         ...retro,
+    //         ...action.payload.update,
+    //       };
+    //     }
+    //     return retro;
+    //   });
     case `${EDIT_RETRO}_${listName}`:
       return state.map((retro) => {
         if (retro.id == action.payload.id) {
-          const newRetro = Object.assign({}, retro);
-          newRetro.content = action.payload.content;
-          return newRetro;
+          return {
+            ...retro,
+            ...action.payload.update,
+          };
         }
         return retro;
       });
+    case `${SET_EXPENSES}_${listName}`:
+      return action.payload.retros;
     default:
       return state;
   }
