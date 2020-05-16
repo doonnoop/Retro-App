@@ -1,0 +1,12 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+.login-button {
+  width: 40rem;
+  background: $off-white;
+  font-size: $l-size;
+  padding: $s-size;
+  margin: $l-size 0;
+  color: $white;
+}

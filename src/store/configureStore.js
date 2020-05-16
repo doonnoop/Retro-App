@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import retroListReducer from "../reducers/retro";
 import thunk from "redux-thunk";
+import retroListReducer from "../reducers/retro";
+import authRouter from "../reducers/auth";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -10,6 +11,7 @@ export default () => {
       wentWell: retroListReducer("WENT_WELL"),
       toImprove: retroListReducer("TO_IMPROVE"),
       actionItems: retroListReducer("ACTION_ITEMS"),
+      auth: authRouter,
     }),
     composeEnhancers(applyMiddleware(thunk))
   );
