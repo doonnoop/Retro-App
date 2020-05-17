@@ -1,0 +1,102 @@
+ch5
+
+- project review
+  - thunks/actions design
+    - 用firebase的时候redux的设计比较特殊
+    - data communication architecture: {
+        1: polling - 前端请求后端数据
+        2: pushing (eg. firebase) - 后端给前端推送数据
+      }
+
+  - auth rules
+  - firebase integration in code (auth, db, etc)
+    - db: {
+        retros: {
+          retro1: { ...data },
+          retro2: {},
+        },
+        users: {
+            'user1': {
+              email: ,
+              displayName: ,
+              retros: [
+                'retro1', 'retro2', ...
+              ]
+            }
+            'user2':
+          },
+          ...
+      }
+    - '/retros'
+    - '/users'
+
+- hooks
+- [system design] parking lot
+  - size: n
+  - functions: addCar, removeCar
+  - How many types of cars? -> 3 types: L, M, S
+  - Any levels/floors? -> 1
+  - etc
+
+
+class Car {
+  constructor(id, type, brand) {
+    this...
+  }
+}
+
+class CarList {
+  constructor(type, size) {
+    this.type = type;
+    this.size = size;
+    this.cars = {};
+  }
+
+  add(car) {
+    if (type != this.type) {
+      throw new Error();
+    }
+
+    if (this.cars.length() + 1 <= size) {
+      this.cars[car.brand] = this.cars[car.brand] || 0 + 1;
+    }
+  }
+  remove(type) {}
+}
+
+class ParkingLot {
+  constructor () {
+    this.carLists = {
+      L: new CarList('L', 5),
+      M: new CarList('M', 10),
+      S: new CarList('S', 20),
+    };
+  }
+
+  addCar(car) {
+    this.carList.L.add(car)
+  }
+
+  search(brand)
+
+  removeCar() {}
+}
+
+- [system design] elevator
+- [front-end design] controlled table
+  - react component display all data, fetch in componentDidMount()
+  - what if I have 20000000 rows?
+    -> pagination: 1. iterator (next, limit/size) 2. range (skip, limit/size)
+    -> infinite scroll
+  - filter & search
+
+- animation basics:
+  - interpolation
+  - interpolation function f(x): (x) => {
+    if (0 < x <= 10) {
+      return 10;
+    }
+    else {
+      return x + 10;
+    }
+  }
