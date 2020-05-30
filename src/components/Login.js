@@ -7,7 +7,7 @@ export const Login = ({ startLogin }) => {
     <div className="box-layout">
       <div className="box-layout__box">
         <h1 className="box-layout__title">Retro App</h1>
-        <p>Best Team retrospective App</p>
+        <p>Best Team Retrospective App</p>
         <button onClick={startLogin} className="big-button">
           Login
         </button>
