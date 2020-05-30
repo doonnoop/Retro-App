@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import RetroList from "./RetroList";
 
@@ -8,6 +9,11 @@ class RetroApp extends React.Component {
     return (
       <div>
         <Header />
+        <div className="indecision">
+          <Link to="/indecision" className="to-indecision">
+            Indecision - What to do next?
+          </Link>
+        </div>
         <div className="retro">
           <div className="container">
             <RetroList list="Went Well" retros={this.props.wentWell} />

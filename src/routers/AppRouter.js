@@ -4,7 +4,7 @@ import { createBrowserHistory } from "history";
 import Login from "../components/Login";
 import RetroApp from "../components/RetroApp";
 import NotFoundPage from "../components/NotFoundPage";
-import Header from "../components/Header";
+import Indecision from "../components/IndecisionApp/IndecisionApp";
 
 export const history = createBrowserHistory();
 
@@ -14,6 +14,7 @@ const AppRouter = () => (
       <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/dashboard" component={RetroApp} />
+        <Route path="/indecision" component={Indecision} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

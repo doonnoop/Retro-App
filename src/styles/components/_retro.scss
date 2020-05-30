@@ -10,3 +10,19 @@
   margin: 0 auto;
   padding: 0 $m-size;
 }
+.indecision {
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.to-indecision {
+  background: $purple;
+  text-decoration: none;
+  color: $white;
+  border: none;
+  border-bottom: 0.6rem solid darken($color: $purple, $amount: 10%);
+  padding: 2.4rem;
+  margin-top: 40px;
+  font-size: $xxm-size;
+}

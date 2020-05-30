@@ -1,0 +1,16 @@
+.header__title {
+  font-size: $l-size;
+  margin: 0;
+}
+.header__subtitle {
+  font-size: $m-size;
+  color: $off-white;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .i_header {
+    margin-bottom: $xl-size;
+  }
+}

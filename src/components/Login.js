@@ -4,10 +4,14 @@ import { startLogin } from "../actions/auth";
 
 export const Login = ({ startLogin }) => {
   return (
-    <div className="login-container">
-      <button className="login-button" onClick={startLogin}>
-        Login
-      </button>
+    <div className="box-layout">
+      <div className="box-layout__box">
+        <h1 className="box-layout__title">Retro App</h1>
+        <p>Best Team retrospective App</p>
+        <button onClick={startLogin} className="big-button">
+          Login
+        </button>
+      </div>
     </div>
   );
 };

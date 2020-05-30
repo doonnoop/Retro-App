@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
-import { startLogout } from "../actions/auth";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
@@ -12,22 +11,16 @@ const Header = (props) => {
         )}
       </div>
       <div>
-        <button onClick={props.startLogout} className="button">
-          Logout
-        </button>
+        <Link to="/dashboard" className="button">
+          Back
+        </Link>
       </div>
     </div>
   );
 };
 
 Header.defaultProps = {
-  title: "Retro App",
+  title: "Indecision",
 };
 
-const mapDisptchToProps = (dispatch) => {
-  return {
-    startLogout: () => dispatch(startLogout()),
-  };
-};
-
-export default connect(null, mapDisptchToProps)(Header);
+export default Header;

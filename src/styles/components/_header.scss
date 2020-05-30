@@ -1,6 +1,12 @@
-.header {
-  margin-bottom: $m-size;
+.header-con {
+  background: $off-black;
   padding: $m-size 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #ffffff;
+}
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
